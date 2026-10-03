@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#splash-screen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #010c2c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#splash-screen h1{
+    color: white;
+    font-size: 2rem;
+    z-index: 999;
+}
+#splash-screen p{
+    color: white;
+    z-index: 999;
+}
+
+#splash-screen .logo{
+    width: 80px;
+}
+
+.loader{
+    width: 45px;
+    height: 45px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    margin-top: 20px;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+#app{
+    display: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todoapp{
+    width: 400px;
+    padding: 20px 25px; 
+    margin-top: 30px;
+    background: linear-gradient(#ffe6f8, #e7efff);
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todoapp h1{
+    text-align: center;
+    text-transform: uppercase;
+    color: #051960;
+    font-weight: 1000;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+    font-size: 25px;
+}
+
+.tache_carte{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* recherche style */
+.todoapp .recherche{
+    margin-top: 15px;
+    width: 100%;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todoapp .recherche input{
+    width: 75%;
+    background-color: transparent;
+    padding: 3px 5px;
+    border-radius: 10px;
+    border: 1px solid #051960;
+}
+
+.todoapp .recherche input:focus{
+    outline: none;
+}
+
+.todoapp .recherche button{
+    background-color: #051960;
+    padding: 3px 5px;
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;
+    transition: all 0.4s ease;
+}
+
+.todoapp .recherche button:hover{
+    background-color: #082899;
+}
+
+.input_task{
+    background-color: #ffffff;
+    margin-top: 5px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input_task .titre{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input_task .titre h3{
+    color: #051960;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.input_task .titre input{
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #051960;
+}
+
+.input_task .titre input:focus{
+    outline: none;
+}
+
+.input_task button{
+    background-color: #051960;
+    padding: 5px 10px;
+    width: fit-content;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    align-self: center;
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;
+    transition: all 0.4s ease;
+}
+
+.input_task button:hover{
+    background-color: #082899;
+}
+
+.task_liste{
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: linear-gradient(#ffe6f8, #e7efff);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task_liste .tache{
+    background-color: #ffffff;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    
+}
+.task_liste .tache:hover{
+    transform: scale(1.05);
+}
+
+
+.task_liste .tache .titre{
+    color: #051960;
+    font-size: 16px;
+}
+
+.task_liste .tache .contenue{
+    color: gray;
+    font-size: 14px;
+}
+
+.task_liste .tache .btn_div{
+    display: flex;
+    gap: 20px;
+}
+
+.task_liste .tache .btn_div .delete_btn{
+    background-color: #051960;
+    padding: 3px 5px;
+    font-size: 12px;
+    cursor: pointer;
+    width: fit-content;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    align-self: flex-end;
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;
+    transition: all 0.4s ease;
+}
+
+.task_liste .tache .btn_div .delete_btn:hover{
+    background-color: #ffffff;
+    color: #051960;
+    border: 1px solid #051960;
+}
+
+.task_liste .tache .btn_div .edit_btn{
+    background-color: #051960;
+    padding: 3px 5px;
+    font-size: 12px;
+    cursor: pointer;
+    width: fit-content;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    align-self: flex-end;
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;
+    transition: all 0.4s ease;
+}
+
+.task_liste .tache .btn_div .edit_btn:hover{
+    background-color: #ffffff;
+    color: #051960;
+    border: 1px solid #051960;
+}
+
+
+.error{
+    color: red;
+}

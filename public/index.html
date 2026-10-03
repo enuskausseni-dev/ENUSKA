@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- manifest json -->
+     <link rel="manifest" href="manifest.json">
+     <meta name="theme-color" content="#2563eb">
+    <!-- liaison des icones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="splash-screen">
+        <img src="icon/todo for enuska icon PC blanc.svg" alt="logo" class="logo">
+        <h1>Todo for Enuska</h1>
+        <p>Chargement...</p>
+        <div class="loader"></div>
+    </div> 
+    <div class="todoapp" id="app">
+        <h1>application de tâche</h1>
+        <div class="recherche">
+            <input type="search" placeholder="Rechercher une tâche..." id="search_input" oninput="cherche_tache()">
+        </div>
+        <div class="tache_carte">
+            <div class="input_task">
+                <div class="titre">
+                    <h3>titre</h3>
+                    <input type="text" id="title" placeholder="ajouter un titre">
+                    <p id="error" class="error"></p>
+                </div>
+                <div class="titre">
+                    <h3>tache</h3>
+                    <input type="text" id="task" placeholder="ajouter une tâche">
+                    <p id="error" class="error"></p>
+                </div>
+                <button id="add_task"><i class="fas fa-plus"></i> ajouter</button>
+            </div>
+            <div class="task_liste" id="task_listes">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
