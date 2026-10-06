@@ -13,6 +13,8 @@ app.use(express.json())
 const connecteDB = require("./config/dbtodo")
 connecteDB()
 
+// const cors = require("cors")
+// app.use(cors())
 // importation de routes
 const taches_routes = require("./src/routes/tache_route")
 app.use(taches_routes)

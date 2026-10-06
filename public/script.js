@@ -17,7 +17,7 @@ const erreur = document.getElementById("error")
 const listes_de_tache = document.getElementById("task_listes")
 
 add_task_btn.addEventListener("click", async () =>{
-    const reponse = await fetch("http://localhost:3000/taches",{
+    const reponse = await fetch("/taches",{
         method:"POST",
         headers :{
             "Content-Type" : "application/json",
@@ -51,7 +51,7 @@ async function display_todos(todos = null) {
     try{
         //recuperer les données dépuis backend²
         if(!todos){
-            const reponse = await fetch("http://localhost:3000/taches");
+            const reponse = await fetch("/taches");
             if(!reponse.ok) throw new Error("Erreur réseau");
             todos = await reponse.json()
 
@@ -124,7 +124,7 @@ async function deleteTodo(id) {
     if(!cofirm_la_suppression) return
 
     try{
-        const response = await fetch(`http://localhost:3000/taches/${id}`, {
+        const response = await fetch(`/taches/${id}`, {
             method : "DELETE"
         })
 
@@ -142,7 +142,7 @@ async function editTode(id, nouveau_donnees){
     const nouveau_titre = prompt("Modifier le titre", nouveau_donnees.titre)
     const nouvelle_tache = prompt("Modifier la tache", nouveau_donnees.tache)
     try{
-        const response = await fetch(`http://localhost:3000/taches/${id}`, {
+        const response = await fetch(`/taches/${id}`, {
             method : "PUT",
             headers : {
                 "Content-Type" : "application/json"
