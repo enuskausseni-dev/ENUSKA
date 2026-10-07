@@ -16,8 +16,11 @@ const erreur = document.getElementById("error")
 // liste
 const listes_de_tache = document.getElementById("task_listes")
 
+// Api URL
+const API_URL = "https://enuska.onrender.coms"
+
 add_task_btn.addEventListener("click", async () =>{
-    const reponse = await fetch("/taches",{
+    const reponse = await fetch(`${API_URL}/taches`,{
         method:"POST",
         headers :{
             "Content-Type" : "application/json",
@@ -51,7 +54,7 @@ async function display_todos(todos = null) {
     try{
         //recuperer les données dépuis backend²
         if(!todos){
-            const reponse = await fetch("/taches");
+            const reponse = await fetch(`${API_URL}/taches`);
             if(!reponse.ok) throw new Error("Erreur réseau");
             todos = await reponse.json()
 
@@ -124,7 +127,7 @@ async function deleteTodo(id) {
     if(!cofirm_la_suppression) return
 
     try{
-        const response = await fetch(`/taches/${id}`, {
+        const response = await fetch(`${API_URL}/taches/${id}`, {
             method : "DELETE"
         })
 
@@ -142,7 +145,7 @@ async function editTode(id, nouveau_donnees){
     const nouveau_titre = prompt("Modifier le titre", nouveau_donnees.titre)
     const nouvelle_tache = prompt("Modifier la tache", nouveau_donnees.tache)
     try{
-        const response = await fetch(`/taches/${id}`, {
+        const response = await fetch(`${API_URL}/taches/${id}`, {
             method : "PUT",
             headers : {
                 "Content-Type" : "application/json"
@@ -186,7 +189,7 @@ function cherche_tache(){
 
 if("ServiceWorker" in navigator){
     window.addEventListener("load", () =>{
-        navigator.serviceWorker.register("/service-worker.js")
+        navigator.serviceWorker.register(`${API_URL}/service-worker.js`)
         .then((registration) =>{
             console.log("Service worker enregistré avec succès:", registration.scope)
         })
