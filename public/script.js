@@ -17,7 +17,7 @@ const erreur = document.getElementById("error")
 const listes_de_tache = document.getElementById("task_listes")
 
 // Api URL
-const API_URL = "https://enuska.onrender.coms"
+const API_URL = "https://enuska.onrender.com"
 
 add_task_btn.addEventListener("click", async () =>{
     const reponse = await fetch(`${API_URL}/taches`,{
